@@ -1,0 +1,60 @@
+@startuml
+skinparam classAttributeIconSize 0
+skinparam componentStyle uml2
+
+package reactor.core.publisher {
+    abstract class Mono {
+    }
+
+    abstract class Flux {
+    }
+}
+
+package org.springframework {
+    package data.mongodb.core {
+        class ReactiveMongoTemplate {
+        }
+    }
+
+    package security.core {
+        interface Authentication {
+        }
+    }
+}
+
+package de.hska.kunde {
+    package config.security {
+        class CustomUserDetailsService << control >> {
+        }
+    }
+
+    package entity {
+        class Kunde << entity >> {
+        }
+    }
+
+    package service #DDDDDD {
+        KundeService --> "1" CustomUserDetailsService
+        KundeService --> "1" ReactiveMongoTemplate
+        KundeService ..> Kunde
+        KundeService ..> Flux
+        KundeService ..> Mono
+        KundeService ..> Authentication
+
+        class KundeService << control >> << @Service >> << @Validated >> {
+            + findById(id: String): Mono<Kunde>
+            + find(queryParams: MultiValueMap<String, String>): Flux<Kunde>
+            + @Transactional create(@Valid kunde: Kunde): Mono<Kunde>
+            + update(@Valid kunde: Kunde, id: String, version: String): Mono<Kunde>
+            + deleteById(id: String): Mono<Kunde>
+        }
+    }
+}
+
+hide empty members
+hide empty methods
+hide empty fields
+
+footer (c) Jürgen Zimmermann
+
+@enduml

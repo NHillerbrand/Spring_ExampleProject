@@ -1,0 +1,75 @@
+@startuml
+skinparam classAttributeIconSize 0
+skinparam componentStyle uml2
+' skinparam monochrome true
+
+package org.springframework.security.core.userdetails {
+    class User {
+    }
+}
+package de.hska.kunde {
+    package config.security {
+        User <|-- CustomUser
+        class CustomUser {
+        }
+    }
+    package entity #DDDDDD {
+        Kunde *--> "1" Umsatz
+        Kunde *--> "1" Adresse
+        Kunde *--> "1" GeschlechtType
+        Kunde *--> "1" FamilienstandType
+        Kunde *--> "*" InteresseType
+        Kunde *--> "1" CustomUser
+
+        class Umsatz {
+            - betrag: BigDecimal
+            - waehrung: Currency
+        }
+
+        class Adresse {
+            - @Pattern plz: String
+            - ort: String
+        }
+
+        enum GeschlechtType {
+            MAENNLICH
+            WEIBLICH
+            DIVERS
+        }
+
+        enum FamilienstandType {
+            LEDIG
+            VERHEIRATET
+            GESCHIEDEN
+            VERWITWET
+        }
+
+        enum InteresseType {
+            SPORT
+            LESEN
+            REISEN
+        }
+
+        class Kunde << entity >> << @Document >> << @TypeAlias("Kunde") >> {
+            - @Pattern @JsonIgnore id : String
+            - @Version @JsonIgnore version : Int
+            - @Pattern @NotEmpty nachname : String
+            - @Email email : String
+            - @Min @Max kategorie: int
+            - newsletter : boolean
+            - @Past geburtsdatum: LocalDate
+            - homepage: URL
+            - username: String
+            - @CreatedDate @JsonIgnore erzeugt: LocalDateTime
+            - @LastModifiedDate @JsonIgnore aktualisiert: LocalDateTime
+        }
+    }
+}
+
+hide empty members
+hide empty methods
+hide empty fields
+
+footer (c) Jürgen Zimmermann
+
+@enduml

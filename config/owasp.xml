@@ -1,0 +1,122 @@
+<?xml version="1.0"?>
+
+<!--
+ Copyright (C) 2016 - present Juergen Zimmermann, Hochschule Karlsruhe
+
+ This program is free software: you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation, either version 3 of the License, or
+ (at your option) any later version.
+
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+
+ You should have received a copy of the GNU General Public License
+ along with this program.  If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<suppressions
+        xmlns="https://jeremylong.github.io/DependencyCheck/dependency-suppression.1.2.xsd"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="https://jeremylong.github.io/DependencyCheck/dependency-suppression.1.2.xsd ">
+    <!-- Spring HATEOAS -->
+    <suppress>
+        <notes><![CDATA[file name: spring-hateoas-1.0.0.M1.jar]]></notes>
+        <gav regex="true">^org\.springframework\.hateoas:spring-hateoas:.*$</gav>
+        <cpe>cpe:/a:springsource:spring_framework</cpe>
+    </suppress>
+
+    <!-- spring-retry -->
+    <suppress>
+        <notes>file name: spring-retry-1.2.4.RELEASE.jar</notes>
+        <gav regex="true">^org\.springframework\.retry:spring-retry:.*$</gav>
+        <cpe>cpe:/a:springsource:spring_framework</cpe>
+    </suppress>
+
+    <!-- Eureka Client -->
+    <suppress>
+        <notes><![CDATA[file name: netflix-commons-util-0.3.0.jar]]></notes>
+        <gav regex="true">^com\.netflix\.netflix-commons:netflix-commons-util:.*$</gav>
+        <cve>CVE-2017-2616</cve>
+    </suppress>
+    <suppress>
+        <notes><![CDATA[file name: guava-19.0.jar]]></notes>
+        <gav regex="true">^com\.google\.guava:guava:.*$</gav>
+        <cve>CVE-2018-10237</cve>
+    </suppress>
+
+    <!-- Spring Integration -->
+    <suppress>
+        <notes><![CDATA[file name: spring-integration-kafka-3.1.0.RELEASE.jar]]></notes>
+        <gav regex="true">^org\.springframework\.integration:spring-integration-kafka:.*$</gav>
+        <cve>CVE-2019-3772</cve>
+    </suppress>
+    <suppress>
+        <notes><![CDATA[file name: spring-integration-kafka-3.1.0.RELEASE.jar]]></notes>
+        <gav regex="true">^org\.springframework\.integration:spring-integration-kafka:.*$</gav>
+        <cpe>cpe:/a:pivotal:spring_framework</cpe>
+    </suppress>
+    <suppress>
+        <notes><![CDATA[file name: spring-integration-kafka-3.1.0.RELEASE.jar]]></notes>
+        <gav regex="true">^org\.springframework\.integration:spring-integration-kafka:.*$</gav>
+        <cpe>cpe:/a:pivotal_software:spring_framework</cpe>
+    </suppress>
+
+    <!-- Spring Cloud Stream -->
+    <suppress>
+        <notes><![CDATA[file name: spring-tuple-1.0.0.RELEASE.jar]]></notes>
+        <gav regex="true">^org\.springframework:spring-tuple:.*$</gav>
+        <cpe>cpe:/a:pivotal_software:spring_framework</cpe>
+    </suppress>
+    <suppress>
+        <notes><![CDATA[file name: spring-tuple-1.0.0.RELEASE.jar]]></notes>
+        <gav regex="true">^org\.springframework:spring-tuple:.*$</gav>
+        <cpe>cpe:/a:vmware:springsource_spring_framework</cpe>
+    </suppress>
+    <suppress>
+        <notes><![CDATA[file name: spring-tuple-1.0.0.RELEASE.jar]]></notes>
+        <gav regex="true">^org\.springframework:spring-tuple:.*$</gav>
+        <cpe>cpe:/a:pivotal:spring_framework</cpe>
+    </suppress>
+    <suppress>
+        <notes><![CDATA[file name: spring-tuple-1.0.0.RELEASE.jar]]></notes>
+        <gav regex="true">^org\.springframework:spring-tuple:.*$</gav>
+        <cpe>cpe:/a:springsource:spring_framework</cpe>
+    </suppress>
+
+    <!-- SLF4J -->
+    <suppress>
+        <notes>file name: jul-to-slf4j-1.7.25.jar</notes>
+        <gav regex="true">^org\.slf4j:jul-to-slf4j:.*$</gav>
+        <cve>CVE-2018-8088</cve>
+    </suppress>
+    <suppress>
+        <notes>file name: slf4j-api-1.7.25.jar</notes>
+        <gav regex="true">^org\.slf4j:slf4j-api:.*$</gav>
+        <cve>CVE-2018-8088</cve>
+    </suppress>
+    <suppress>
+        <notes>file name: slf4j-nop-1.7.25.jar</notes>
+        <gav regex="true">^org\.slf4j:slf4j-nop:.*$</gav>
+        <cve>CVE-2018-8088</cve>
+    </suppress>
+    <suppress>
+        <notes>file name: jcl-over-slf4j-1.7.25.jar</notes>
+        <gav regex="true">^org\.slf4j:jcl-over-slf4j:.*$</gav>
+        <cve>CVE-2018-8088</cve>
+    </suppress>
+
+    <!-- ktlint -->
+    <suppress>
+        <notes><![CDATA[file name: ktlint-reporter-checkstyle-0.31.0.jar]]></notes>
+        <gav regex="true">^com\.github\.shyiko\.ktlint:ktlint-reporter-checkstyle:.*$</gav>
+        <cve>CVE-2019-9658</cve>
+    </suppress>
+    <suppress>
+        <notes><![CDATA[file name: guava-18.0.jar]]></notes>
+        <gav regex="true">^com\.google\.guava:guava:.*$</gav>
+        <cve>CVE-2018-10237</cve>
+    </suppress>
+</suppressions>
